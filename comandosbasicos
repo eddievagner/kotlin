@@ -31,3 +31,9 @@ fun main() {
     
  println(maxAge)
 }								          const val MAX_AGE = 68			
+
+-----------------------------------------------------------------------------------------------------------
+
+Uma variável não pode ser declarada sem tipo e sem atribuição.
+
+Uma variável com inferência de tipo só receberá valores do mesmo tipo que a sua primeira atribuição.							          const val MAX_AGE = 68			
