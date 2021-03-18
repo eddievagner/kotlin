@@ -10,7 +10,7 @@
 												  currentAge = null ou 22
 			    Const Val(valor imutavel, SNAKE_CASE) constante cujo valor é atribuido durante a compilação
 											  --> Ex: const val MIN_AGE = 16
-			
+												  const val MAX_AGE = 68	
 const val MAX_AGE = 68
 ////função principal
 fun main() {
@@ -30,10 +30,67 @@ fun main() {
      currentAge = 90
     
  println(maxAge)
-}								          const val MAX_AGE = 68			
+}								          		
 
 -----------------------------------------------------------------------------------------------------------
 
 Uma variável não pode ser declarada sem tipo e sem atribuição.
 
-Uma variável com inferência de tipo só receberá valores do mesmo tipo que a sua primeira atribuição.							          const val MAX_AGE = 68			
+Uma variável com inferência de tipo só receberá valores 
+do mesmo tipo que a sua primeira atribuição.
+----------------------------------------------------------------------------------------------------------------
+
+NULLABILITY
+. Qualquer tipo pode ser nulo, porém isso deve ser 
+explicitado na declaração de variável através do uso
+da interrogação (?);
+. A inferência de tipo não atribui nullability;
+
+fun main(){
+	val count = 10 
+    val times = 9 
+   val r = times + count
+    println(r)
+    println(count.plus(times))
+
+
+OPERADORES COMPARATIVOS
+. Os operadores podem ser chamados tanto como expressão 
+quanto como comando. O resultado será o mesmo.
+. A função de soma também funciona para concatenar Strings;
+
+fun main(){
+	val d = 22
+    val t = 90
+    
+    	println(d > t)
+        println(d.compareTo(t))
+    	
+ 
+OPERADORES LÓGICOS E OPERADORES IN E RANGE
+. Se valor está presente em uma lista ou 
+uma faixa (range) de valores;
+. Range cria um intervalo de valores que
+inicia no primeiro parâmetro e acaba no 
+segundo.
+
+fun main(){
+	val bingo = listOf(8,6,34,2,13)
+    val number = (1..34).random()
+    
+    println(number)
+    println(number in bingo)   
+		}
+-------------------------------------------------------
+
+const val MIN_AGE = 16 
+const val MAX_AGE = 68
+////função principal
+fun main(){
+	var age = (10..100).random()
+    println(age)
+    println(age in MIN_AGE..MAX_AGE)
+    println(age >= MIN_AGE && age <= MAX_AGE)
+}
+-------------------------------------------------------------------------------------
+
