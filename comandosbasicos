@@ -94,3 +94,43 @@ fun main(){
 }
 -------------------------------------------------------------------------------------
 
+MANIPULAÇÃO DE STRINGS
+
+. Strings possuem diversos métodos associados
+. Indexação, concatenação, comparação,
+  formatação;
+. Pode ser concatenada com plus/+;
+. Também é tratada como um array de Char;
+
+INDEXAÇÃO
+. String como array;
+. First(), last(), String.length, String[index];
+
+fun main(){
+    val s = "Olá, mundo!"
+    
+    println(s[0])
+    println(s.first())
+    
+    println(s[s.length-1])
+    println(s.last())
+    
+}
+
+CONCATENAÇÃO
+. Para concatenar duas strings o plus/+ pode ser
+utilizado;
+. Para concatenar uma variável a uma String, os
+símbolos ${} devem ser inseridos;
+
+fun main(){
+    val name = "Vagner"
+    val s = "Olá"
+    
+    println(s + name)
+    println("${s}, ${name}!")
+    println("Bem vindo(a), $name!")
+}
+
+
+
