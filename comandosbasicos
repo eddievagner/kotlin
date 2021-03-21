@@ -132,5 +132,229 @@ fun main(){
     println("Bem vindo(a), $name!")
 }
 
+-------------------------------------------------------------------------------
+
+
+NULLABILITY
+. Qualquer tipo pode ser nulo, porém isso deve ser 
+explicitado na declaração de variável através do uso
+da interrogação (?);
+. A inferência de tipo não atribui nullability;
+
+fun main(){
+	val count = 10 
+    val times = 9 
+   val r = times + count
+    println(r)
+    println(count.plus(times))
+
+
+OPERADORES COMPARATIVOS
+. Os operadores podem ser chamados tanto como expressão 
+quanto como comando. O resultado será o mesmo.
+. A função de soma também funciona para concatenar Strings;
+
+fun main(){
+	val d = 22
+    val t = 90
+    
+    	println(d > t)
+        println(d.compareTo(t))
+    	
+ 
+OPERADORES LÓGICOS E OPERADORES IN E RANGE
+. Se valor está presente em uma lista ou 
+uma faixa (range) de valores;
+. Range cria um intervalo de valores que
+inicia no primeiro parâmetro e acaba no 
+segundo.
+
+fun main(){
+	val bingo = listOf(8,6,34,2,13)
+    val number = (1..34).random()
+    
+    println(number)
+    println(number in bingo)   
+		}
+-------------------------------------------------------
+
+const val MIN_AGE = 16 
+const val MAX_AGE = 68
+////função principal
+fun main(){
+	var age = (10..100).random()
+    println(age)
+    println(age in MIN_AGE..MAX_AGE)
+    println(age >= MIN_AGE && age <= MAX_AGE)
+}
+-------------------------------------------------------------
+MANIPULAÇÃO DE STRINGS
+
+. Strings possuem diversos métodos associados
+. Indexação, concatenação, comparação,
+  formatação;
+. Pode ser concatenada com plus/+;
+. Também é tratada como um array de Char;
+
+INDEXAÇÃO
+. String como array;
+. First(), last(), String.length, String[index];
+
+fun main(){
+    val s = "Olá, mundo!"
+    
+    println(s[0])
+    println(s.first())
+    
+    println(s[s.length-1])
+    println(s.last())
+    
+}
+
+CONCATENAÇÃO
+. Para concatenar duas strings o plus/+ pode ser
+utilizado;
+. Para concatenar uma variável a uma String, os
+símbolos ${} devem ser inseridos;
+
+fun main(){
+    val name = "Vagner"
+    val s = "Olá"
+    
+    println(s + name)
+    println("${s}, ${name}!")
+    println("Bem vindo(a), $name!")
+}
+
+-----------------------------------------------------------
+
+EMPTY X BLANK
+. Métodos de comparação;
+. String está vazia, em branco ou é nula?
+Se o tamanho da string(s.length) for 0 esta 
+empty e blank;
+Se o tamanho for > 0
+mas todos os caracteres são
+são espaços em branco, está blank mas não empty;
+
+fun main(){
+ val empty = ""
+   println(empty.length)
+   
+   val blank = "             "
+    println(blank.length)
+   
+   //println(empty.isEmpty() && empty.isBlank())
+   println(blank.isEmpty() || blank.isBlank())
+ 
+----------------------------------------------------------------------
+
+FUNÇÕES
+. Prefixo Fun nomeDaFunção(nome:Tipo):TipoRetorno{}
+. Funções anônimas, single-line, inline, extensões,
+Lambdas, ordem superior;
+
+fun main(){
+     private fun getFullName(name:String, LastName:String):String{
+         val fullName = "$name $LastName"
+         return fullname
+     }
+     
+     private fun getFullName(name:String, LastName:String):String{
+         return "$name $lastName"
+     }
+    
+ private fun getFullName(name:String, LastName:String) = "$name $LastName"
+ 
+}
+
+-------------------------------------------------------------------------------
+
+FUNçÕES ORDEM SUPERIOR
+. Recebem outra função ou lambada por parâmetro;
+. Bastatnte úteis para a generalização de funções e
+tratamento de erros;
+
+val x = calculate(12,4,::sum)
+val y = calculate(12,4){a,b -> a*b}
+
+fun main(){
+val z:Int
+    
+    z = calculate(34, 90){a,b -> a+b}
+    println(z)   
+}
+
+fun sum(a1:Int,a2:Int) = a1.plus(a2)
+
+fun calculate(n1:Int,n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result
+}
+
+-------------------------------------------------------------------
+FUNÇÕES SINGLE-LINE
+. Prefixo Fun nomeDaFuncao(nome:Tipo)=retorno;
+. Função de uma única linha;
+. Infere o tipo de retorno;
+
+ private fun getFullName(name:String, LastName:String) = "$name $LastName"
+
+FUNÇÕES / EXTENSÕES
+. Prefixo Fun Tipo.nomeDaFuncao();
+. Cria uma função que só pode ser chamada por um
+tipo específico, cujo o valor pode ser referenciado
+dentro da função através da palavra this;
+
+fun String.randomCapitalizedLetter() = 
+	this[0..this.length-1).random().toUpperCase()
+
+---------------------------------------------------------------------
+ESTRUTURAS DE CONTROLE
+. if/else, when, elvis operator;
+. Pode ser utilizado tanto para conrole quanto para atribuição
+. Pode ser encadeado com múltiplas estruturas;
+---------------------------------------------------------------------------
+
+ATRIBUIÇÃO
+ELSE/IF
+
+. O valor atribuído tem que estar na última linha do bloco;
+. A condicional pode não usar chaves so só fizer a atribuição;
+
+WHEN
+. Equivalente ao switch de outras linguagens;
+. Aceita tanto valores quanto condicionais;
+. Aceita range como case;
+
+ELVIS OPERATOR
+. O mais próximo que a linguagem possui de um operador ternário;
+. Verifica se um valor é nulo e apresenta uma opção caso seja;
+. Pode ser encadeado;
+
+fun main(){
+val grade = (0..10).random()
+println(grade.getStudentStatus())
+
+}
+
+fun Int.getStudentStatus():String{
+    println("Nota $this")
+    
+    return when(this){
+        in 0..4 -> "Reprovado"
+        in 5..7 -> "Mediano"
+        in 8..9 -> "Bom"
+        10 -> "Excelente"
+        else -> "Indefinido"
+    }
+}
+-----------------------------------------------------------~´
+
+REPETIÇÃO
+. While, do..while, for e forEach;
+. Estruturas similares ás convencionais em outras linguagens;
+. Aceita os comandos in, range, until, downTo e step;
+
 
 
